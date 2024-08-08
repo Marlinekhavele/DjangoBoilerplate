@@ -66,3 +66,29 @@ A reusable boilerplate for starting new Django projects. This boilerplate includ
     ```bash
     python manage.py runserver
     ```
+
+### Configuration
+
+- **Static files:** `STATIC_URL`, `STATICFILES_DIRS`, and `STATIC_ROOT` are set up in `settings.py`.
+- **Media files:** `MEDIA_URL` and `MEDIA_ROOT` are set up in `settings.py`.
+
+### Docker Setup
+
+1. **Build and run the Docker containers**
+
+    ```bash
+    docker-compose up --build
+    ```
+
+2. **Run migrations inside the Docker container**
+
+    ```bash
+    docker-compose exec web python manage.py migrate
+    ```
+
+### Deployment
+
+When you're ready to deploy, ensure all static files are collected:
+
+```bash
+python manage.py collectstatic
